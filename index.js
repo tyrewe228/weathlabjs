@@ -1,4 +1,5 @@
 const fs = require('fs').promises;
+const readline = require('readline-sync');
 
 async function loadConfig(filename) {
     try {
@@ -24,3 +25,24 @@ async function getDataFromApi(apiKey, city) {
         throw error;
     }
 }
+
+async function main() {
+    try {
+        const config = await loadConfig('config.json');
+        const city = readline.question('Enter city name: ');
+        const data = await getDataFromApi(config.api_key, city);
+        
+        console.log(`Погода в ${data.name}:`);
+        console.log(`Температура: ${data.main.temp}°C`);
+        console.log(`Опис: ${data.weather[0].description}`);
+        console.log(`Вологість: ${data.main.humidity}%`);
+        
+        await fs.writeFile('output.json', JSON.stringify(data, null, 2));
+        console.log('Дані збережено у output.json');
+        
+    } catch (error) {
+        console.error('Помилка виконання:', error.message);
+    }
+}
+
+main();
