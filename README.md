@@ -15,7 +15,7 @@
 2. Склонуйте цей репозиторій:
    ```bash
    git clone https://github.com/tyrewe228/weatherlabjs.git
-   cd weather-api-lab
+   cd weatherlabjs
 3. Встановіть залежності:
    npm install
 4. Створіть файл config.json у корені проєкту з вашим API-ключем від OpenWeatherMap:
