@@ -1,0 +1,15 @@
+{
+  "name": "weathlabjs",
+  "version": "1.0.0",
+  "description": "\"# Lab 5. Work with API\" \r \"Program for work with OpenWeatherMap API.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
